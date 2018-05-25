@@ -91,11 +91,10 @@ Get the logs
 Scale up your deployment  
 `kubectl scale deploy/hello-server --replicas 3`
 
-Run the cURL command multiple time and attention that the hostname change, as the traffic get load balanced accross your nodes.
-
+Run the cURL command multiple time and attention that the hostname change, as the traffic get load balanced accross your nodes.  
 `curl http://<ip>:8080/`
 
-Watch the pods by runnig this comamand in another Shell  
+Watch the pods by runnig this comamand in another Shell    
 `kubectl get pods -w`
 
 In another Google Shell windows, kill one pods  
@@ -108,7 +107,7 @@ Notice that the pod get recreated!
 Browse the VM instance service
 Delete on VM from your worker pool
 
-Watch the pods and the pods beeing automatically recreated, run the commands in separated Shell
+Watch the pods and the pods beeing automatically recreated, run the commands in separated Shell  
 `kubectl get pods -w`  
 `kubectl get nodes -w`  
 
