@@ -79,7 +79,7 @@ Fetch the public IP assigned to the Loadbalancer, notice it might take some time
 ```
 kubectl expose deployment hello-server --type "LoadBalancer"
 ```
-Browse the service, and pay attention that the hostname change when running the command multiple of time.
+Browse the service.
 
 `curl http://<ip>:8080/`
 
@@ -89,9 +89,13 @@ Get the logs
 ## Scale 
 
 Scale up your deployment  
-`kubectl scale deploy/hello-server --replicas 8`
+`kubectl scale deploy/hello-server --replicas 3`
 
-Watch the pods by runnig this comamand in another Shell 
+Run the cURL command multiple time and attention that the hostname change, as the traffic get load balanced accross your nodes.
+
+`curl http://<ip>:8080/`
+
+Watch the pods by runnig this comamand in another Shell  
 `kubectl get pods -w`
 
 In another Google Shell windows, kill one pods  
